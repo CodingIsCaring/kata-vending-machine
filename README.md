@@ -41,12 +41,16 @@ items = [{name:"Smarties", code:"A01", quantity:10, price:0.60},
 
 4. If an item is correctly selected and there is no change needed then return "Vending Item Name". Where "Item Name" is the name of the item.
 
-5. If an invalid item is selected return "Invalid selection! : Money in vending machine = 11.20". Where 11.20 is the machines money float.
+5. If an invalid item is selected return "Invalid selection! : Money in vending machine = 11.20". Where 11.20 is the
+   machines money float.
 
 6. If a selection is successful then the quantity should be updated.
 
-7. The vending machine never runs out of money for simplicity however you will need to keep track of the amount of money in the machine at anytime (this is not tested in any of the test cases)
+7. The vending machine never runs out of money for simplicity however you will need to keep track of the amount of money
+   in the machine at anytime (this is not tested in any of the test cases)
 
 8. Change is always given to 2 decimal places ie 7.00
-   
+
 Good luck and Enjoy
+
+NOTE for future iterations: We could use an Array of HashMap.
