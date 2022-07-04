@@ -1,14 +1,16 @@
-# Kata Vending Machine
+# [Kata Vending Machine](https://www.codewars.com/kata/586e6d4cb98de09e3800014f/javascript)
 
 In this simple Kata your task is to recreate a vending machine. 
 
-You will have to make a class called VendingMachine with at least one method called vend. 
+You will have to make a class called _VendingMachine_ with at least one method called _vend_. 
 
-On creation of a new instance of VendingMachine the items Array and Initial vending machine money is passed. 
+On creation of a new instance of _VendingMachine_ the items Array and Initial vending machine money is passed. 
 
-The vend method should take two arguments 1. Selection code of the item (not case sensitive) and 2. 
+The _vend_ method should take two arguments 
 
-Amount of money the user inserts into the machine.
+1.Selection code of the item (not case sensitive) and 
+
+2.Amount of money the user inserts into the machine.
 
 ## Examples
 
