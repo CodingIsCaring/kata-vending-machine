@@ -47,7 +47,7 @@ items = [{name:"Smarties", code:"A01", quantity:10, price:0.60},
 6. If a selection is successful then the quantity should be updated.
 
 7. The vending machine never runs out of money for simplicity however you will need to keep track of the amount of money
-   in the machine at anytime (this is not tested in any of the test cases)
+   in the machine at anytime.
 
 8. Change is always given to 2 decimal places ie 7.00
 

@@ -8,11 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class VendingMachineShould {
 
-//    Item smarties = new Item("Smarties", "A01", 10, 0.60);
-//        Item caramacBar = new Item("Caramac Bar", "A02", 5, 0.60);
-//        Item dairyMilk = new Item("Dairy Milk", "A03", 1, 0.65);
-//        Item freddo = new Item("Freddo", "A04", 1, 0.25);
-
     @Test
     void return_not_enough_money_when_money_given_is_less_than_the_cost() {
         Item smarties = new Item("Smarties", "A01", 10, 0.60);
@@ -73,5 +68,21 @@ class VendingMachineShould {
 
         assertEquals(0, dairyMilk.getQuantity());
     }
+
+    @Test
+    void keep_track_of_money_in_vending_machine() {
+        Item smarties = new Item("Smarties", "A01", 10, 0.60);
+        Item caramacBar = new Item("Caramac Bar", "A02", 51, 0.60);
+        Item dairyMilk = new Item("Dairy Milk", "A03", 12, 0.65);
+        Item freddo = new Item("Freddo", "A04", 13, 0.25);
+        VendingMachine vendingMachine = new VendingMachine(
+                List.of(smarties, caramacBar, dairyMilk, freddo));
+
+        vendingMachine.vend("A03", 0.65);
+        vendingMachine.vend("A04", 0.85);
+
+        assertEquals(100.90, vendingMachine.getCash());
+    }
+
 
 }

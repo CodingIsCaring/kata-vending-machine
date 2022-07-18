@@ -36,4 +36,8 @@ public class Item {
     public void decreaseQuantity() {
         this.quantity--;
     }
+
+    public Double getPrice() {
+        return this.price;
+    }
 }

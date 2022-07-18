@@ -5,6 +5,7 @@ import java.util.List;
 public class VendingMachine {
 
     private List<Item> items;
+    private Double cash = 100.00;
 
     public VendingMachine(List<Item> items) {
         this.items = items;
@@ -27,6 +28,7 @@ public class VendingMachine {
         }
 
         item.decreaseQuantity();
+        this.cash += item.getPrice();
         if (change > 0) {
             return "Vending " + item.getName() + " with " + change + " change";
         }
@@ -41,4 +43,7 @@ public class VendingMachine {
                 .orElse(null);
     }
 
+    public Double getCash() {
+        return this.cash;
+    }
 }
