@@ -5,13 +5,13 @@ import java.util.List;
 public class VendingMachine {
 
     private List<Item> items;
-    private Double cash = 100.00;
+    private double cash = 100.00;
 
     public VendingMachine(List<Item> items) {
         this.items = items;
     }
 
-    public String vend(String code, Double money) {
+    public String vend(String code, double money) {
         Item item = findItemBy(code);
 
         if (item == null) {
@@ -22,7 +22,7 @@ public class VendingMachine {
             return item.getName() + ": Out of stock!";
         }
 
-        Double change = item.changeFrom(money);
+        double change = item.changeFrom(money);
         if (change < 0) {
             return "Not enough money!";
         }
@@ -43,7 +43,7 @@ public class VendingMachine {
                 .orElse(null);
     }
 
-    public Double getCash() {
+    public double getCash() {
         return this.cash;
     }
 }
