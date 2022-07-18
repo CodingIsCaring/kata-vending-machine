@@ -13,6 +13,10 @@ public class VendingMachine {
     public String vend(String code, Double money) {
         Item item = findItemBy(code);
 
+        if (item == null) {
+            return "Invalid selection! : Money in vending machine = " + money;
+        }
+
         if (item.isOutOfStock()) {
             return item.getName() + ": Out of stock!";
         }

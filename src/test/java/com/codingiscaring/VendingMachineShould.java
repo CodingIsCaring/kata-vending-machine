@@ -53,4 +53,13 @@ class VendingMachineShould {
                 vendingMachine.vend("A03", 0.65));
     }
 
+    @Test
+    void return_invalid_selection_when_the_selected_item_does_not_exist() {
+        Item dairyMilk = new Item("Dairy Milk", "A03", 1, 0.65);
+        VendingMachine vendingMachine = new VendingMachine(
+                List.of(dairyMilk));
+
+        assertEquals("Invalid selection! : Money in vending machine = 0.85",
+                vendingMachine.vend("A04", 0.85));
+    }
 }
