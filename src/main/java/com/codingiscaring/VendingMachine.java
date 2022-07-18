@@ -27,8 +27,7 @@ public class VendingMachine {
             return "Not enough money!";
         }
 
-        item.decreaseQuantity();
-        this.cash += item.getPrice();
+        updateInventory(item);
         if (change > 0) {
             return "Vending " + item.getName() + " with " + DoubleUtils.twoDecimalsFormat(change) + " change";
         }
@@ -46,4 +45,10 @@ public class VendingMachine {
     public double getCash() {
         return this.cash;
     }
+
+    private void updateInventory(Item item) {
+        item.decreaseQuantity();
+        this.cash += item.getPrice();
+    }
+
 }
