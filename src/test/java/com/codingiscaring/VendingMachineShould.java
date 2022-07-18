@@ -62,4 +62,16 @@ class VendingMachineShould {
         assertEquals("Invalid selection! : Money in vending machine = 0.85",
                 vendingMachine.vend("A04", 0.85));
     }
+
+    @Test
+    void update_quantity_when_the_selection_is_successfully_sold() {
+        Item dairyMilk = new Item("Dairy Milk", "A03", 1, 0.65);
+        VendingMachine vendingMachine = new VendingMachine(
+                List.of(dairyMilk));
+
+        vendingMachine.vend("A03", 0.65);
+
+        assertEquals(0, dairyMilk.getQuantity());
+    }
+
 }

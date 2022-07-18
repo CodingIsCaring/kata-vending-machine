@@ -28,4 +28,12 @@ public class Item {
     double changeFrom(Double money) {
         return money - price;
     }
+
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    public void decreaseQuantity() {
+        this.quantity--;
+    }
 }

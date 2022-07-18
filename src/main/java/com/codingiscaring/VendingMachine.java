@@ -22,14 +22,16 @@ public class VendingMachine {
         }
 
         Double change = item.changeFrom(money);
+        if (change < 0) {
+            return "Not enough money!";
+        }
+
+        item.decreaseQuantity();
         if (change > 0) {
             return "Vending " + item.getName() + " with " + change + " change";
         }
-        if (change == 0) {
-            return "Vending " + item.getName();
-        }
 
-        return "Not enough money!";
+        return "Vending " + item.getName();
     }
 
     private Item findItemBy(String code) {
