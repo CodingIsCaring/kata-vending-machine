@@ -15,7 +15,7 @@ public class VendingMachine {
         Item item = findItemBy(code);
 
         if (item == null) {
-            return "Invalid selection! : Money in vending machine = " + money;
+            return "Invalid selection! : Money in vending machine = " + DoubleUtils.twoDecimalsFormat(money);
         }
 
         if (item.isOutOfStock()) {
@@ -30,7 +30,7 @@ public class VendingMachine {
         item.decreaseQuantity();
         this.cash += item.getPrice();
         if (change > 0) {
-            return "Vending " + item.getName() + " with " + change + " change";
+            return "Vending " + item.getName() + " with " + DoubleUtils.twoDecimalsFormat(change) + " change";
         }
 
         return "Vending " + item.getName();

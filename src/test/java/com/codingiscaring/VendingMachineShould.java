@@ -2,6 +2,7 @@ package com.codingiscaring;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Formatter;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -84,5 +85,25 @@ class VendingMachineShould {
         assertEquals(100.90, vendingMachine.getCash());
     }
 
+
+    @Test
+    void return_money_amount_with_two_decimals_when_invalid_selection() {
+        Item dairyMilk = new Item("Dairy Milk", "A03", 1, 0.65);
+        VendingMachine vendingMachine = new VendingMachine(
+                List.of(dairyMilk));
+
+        assertEquals("Invalid selection! : Money in vending machine = 0.90",
+                vendingMachine.vend("A04", 0.90));
+    }
+
+    @Test
+    void return_change_with_two_decimals_when_the_item_is_correctly_selected() {
+        Item smarties = new Item("Smarties", "A01", 10, 0.60);
+        VendingMachine vendingMachine = new VendingMachine(
+                List.of(smarties));
+
+        assertEquals("Vending Smarties with 0.40 change",
+                vendingMachine.vend("A01", 1.00));
+    }
 
 }
